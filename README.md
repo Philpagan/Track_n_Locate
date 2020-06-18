@@ -52,6 +52,16 @@ L’application propose également un écran secondaire ne comprenant **que les 
 La distance est calculée entre la position du pilote (prise par le GPS à l'initialisation) et la position courante. Le temps que le GPS se cale sur tous les satellites, cette distance peut être très différente de 0.
 Pour y remédier avant de décoller : `Long press ENTER` + `Réinit. Télémétrie`
 
+### Difficulté à capturer les coordonnées avec Google Lens !?
+
+Ce n'est pas aussi facile qu'un QRcode (code trop lourd à intégrer pour nos radios !), ça ne marche pas à tous les coups et il faut 
+
+- trouver la bonne distance
+- ne capturer que sur image bien nette
+- capturer quand le rétro-éclairage est encore actif
+
+... mais c'est top quand même !
+
 ## Installation
 
 1. Renommer le script `TrackLocate_PhilPagan_2.0.lua` pour compatibilité avec OpenTx. 
