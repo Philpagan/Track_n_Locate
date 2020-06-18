@@ -45,6 +45,13 @@ L’application propose également un écran secondaire ne comprenant **que les 
 
 **Le passage d’un écran à l’autre se fait par appui prolongé sur la touche Menu** de la radio commande
 
+## Astuces
+
+### Distance importante avant même de décoller !?
+
+La distance est calculée entre la position du pilote (prise par le GPS à l'initialisation) et la position courante. Le temps que le GPS se cale sur tous les satellites, cette distance peut être très différente de 0.
+Pour y remédier avant de décoller : `Long press ENTER` + `Réinit. Télémétrie`
+
 ## Installation
 
 1. Renommer le script `TrackLocate_PhilPagan_2.0.lua` pour compatibilité avec OpenTx. 
