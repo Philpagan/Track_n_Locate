@@ -10,6 +10,10 @@
 - Compatible OpenTX 2.2 et 2.3
 - [Plus d'informations](#v3.0)
 
+## Script LUA
+
+Disponible dans [Releases](https://github.com/Philpagan/Track_n_Locate/releases)
+
 ## Objectifs
 
 - Suivre en permanence la position, la direction et l’altitude de son Racer,
