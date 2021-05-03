@@ -64,7 +64,7 @@ En fonctionnement opérationnel (Racer et son GPS en fonctionnement), l'écran s
 
 ![](/img/loc_actual.jpg)
 
-Après avoir rallumé la radio commande (et si Racer et GPS ne sont plus opérationnels), l'écran secondaire rappelle la dernière location enregistrée :
+Après avoir rallumé la radio commande (et si Racer et GPS ne sont plus opérationnels), l'écran secondaire rappelle la dernière localisation enregistrée :
 
 ![](/img/loc_rec.jpg)
 
@@ -100,7 +100,7 @@ Ce n'est pas aussi facile qu'un QRcode (code trop lourd à intégrer pour nos ra
    N'hésitez pas à relancer une découverte des capteurs si besoin
    ![](/img/sensors.jpg)
 
-4. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trlloc` (ou autre nom donné au script LUA)
+4. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trkloc` (ou autre nom donné au script LUA)
 
    ![](/img/script_in_telemetry.jpg)
 
