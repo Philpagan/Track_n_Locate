@@ -8,7 +8,7 @@
 
 - Mémorisation sur carte SD de la dernière position du Racer : la dernière position peut être récupérée même si la radio commande a été éteinte !
 - Compatible OpenTX 2.2 et 2.3
-- Plus d'informations : [link]((#new-v3))
+- Plus d'informations : <a name="V3.0"></a>
 
 ## Objectifs
 
@@ -51,7 +51,7 @@ L’application propose également un écran secondaire ne comprenant **que les 
 
 ## Récupération de la dernière position du Racer (nouveauté v3.0)
 
-[create an anchor](#new-v3)
+<a name="V3.0"></a>
 
 Votre Racer a crashé et dans votre empressement à le récupérer vous avez malheureusement éteint la radio commande !!!
 Pas de panique, la dernière position du Racer peut être visualisée en rallumant la radio commande et en se rendant dans l'écran secondaire de Track_n_Locate.
