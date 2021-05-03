@@ -8,7 +8,7 @@
 
 - Mémorisation sur carte SD de la dernière position du Racer : la dernière position peut être récupérée même si la radio commande a été éteinte !
 - Compatible OpenTX 2.2 et 2.3
-- Plus d'informations : <a name="V3.0"></a>
+- [Plus d'informations](#v3.0)
 
 ## Objectifs
 
