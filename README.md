@@ -4,7 +4,11 @@
 
 ## *Localiser son racer FPV en cas de crash, de perte de télémétrie, de lipo débranchée*
 
+## Nouveau : v3.0
 
+- Mémorisation sur carte SD de la dernière position du Racer : la dernière position peut être récupérée même si la radio commande a été éteinte !
+- Compatible OpenTX 2.2 et 2.3
+- Plus d'informations : [link]((#new-v3))
 
 ## Objectifs
 
@@ -45,6 +49,21 @@ L’application propose également un écran secondaire ne comprenant **que les 
 
 **Le passage d’un écran à l’autre se fait par appui prolongé sur la touche Menu** de la radio commande
 
+## Récupération de la dernière position du Racer (nouveauté v3.0)
+
+[create an anchor](#new-v3)
+
+Votre Racer a crashé et dans votre empressement à le récupérer vous avez malheureusement éteint la radio commande !!!
+Pas de panique, la dernière position du Racer peut être visualisée en rallumant la radio commande et en se rendant dans l'écran secondaire de Track_n_Locate.
+
+En fonctionnement opérationnel (Racer et son GPS en fonctionnement), l'écran secondaire propose la Localisation actuelle:
+
+![](/img/loc_actual.jpg)
+
+Après avoir rallumé la radio commande (et si Racer et GPS ne sont plus opérationnels), l'écran secondaire rappelle la dernière location enregistrée :
+
+![](/img/loc_rec.jpg)
+
 ## Astuces
 
 ### Distance importante avant même de décoller !?
@@ -64,7 +83,7 @@ Ce n'est pas aussi facile qu'un QRcode (code trop lourd à intégrer pour nos ra
 
 ## Installation
 
-1. Renommer le script `TrackLocate_PhilPagan_2.0.lua` pour compatibilité avec OpenTx. 
+1. Renommer le script `TrackLocate_PhilPagan_x.0.lua` pour compatibilité avec OpenTx. 
    Par exemple ici : `trkloc.lua`
 
 2. Le copier sur la carte SD de la radio, dans le répertoire 
