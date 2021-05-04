@@ -10,7 +10,7 @@
 - Compatible OpenTX 2.2 et 2.3
 - [Plus d'informations](#v3.0)
 
-## Script LUA
+## Scripts LUA
 
 Disponible dans [Releases](https://github.com/Philpagan/Track_n_Locate/releases)
 
@@ -64,7 +64,7 @@ En fonctionnement opérationnel (Racer et son GPS en fonctionnement), l'écran s
 
 ![](/img/loc_actual.jpg)
 
-Après avoir rallumé la radio commande (et si Racer et GPS ne sont plus opérationnels), l'écran secondaire rappelle la dernière localisation enregistrée :
+Après avoir rallumé la radio commande (et si Racer et GPS ne sont plus opérationnels), l'écran secondaire rappelle la dernière location enregistrée :
 
 ![](/img/loc_rec.jpg)
 
@@ -87,20 +87,22 @@ Ce n'est pas aussi facile qu'un QRcode (code trop lourd à intégrer pour nos ra
 
 ## Installation
 
-1. Renommer le script `TrackLocate_PhilPagan_x.0.lua` pour compatibilité avec OpenTx. 
+1. Télécharger `TrackLocate_PhilPagan_x.0.lua` disponible dans les Releases
+   
+2. Renommer le script  pour compatibilité avec OpenTx. 
    Par exemple ici : `trkloc.lua`
 
-2. Le copier sur la carte SD de la radio, dans le répertoire 
+3. Le copier sur la carte SD de la radio, dans le répertoire 
 
    ```
    /SCRIPTS/TELEMETRY
    ```
 
-3. Vérifiez que pour votre modèle, vos capteurs comprennent bien `GPS, Alt et Sats`
+4. Vérifiez que pour votre modèle, vos capteurs comprennent bien `GPS, Alt et Sats`
    N'hésitez pas à relancer une découverte des capteurs si besoin
    ![](/img/sensors.jpg)
 
-4. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trkloc` (ou autre nom donné au script LUA)
+5. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trlloc` (ou autre nom donné au script LUA)
 
    ![](/img/script_in_telemetry.jpg)
 
