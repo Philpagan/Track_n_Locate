@@ -7,7 +7,6 @@
 ## Nouveau : v3.0
 
 - Mémorisation sur carte SD de la dernière position du Racer : la dernière position peut être récupérée même si la radio commande a été éteinte !
-- Compatible OpenTX 2.2 et 2.3
 - [Plus d'informations](#v3.0)
 
 ## Scripts LUA
@@ -22,9 +21,11 @@ Disponible dans [Releases](https://github.com/Philpagan/Track_n_Locate/releases)
 
 ## Qu’est-ce que Track & Locate ?
 
-Il s’agit d’un Script LUA pour radio-commande sous OpenTx 2.x.
+Il s’agit d’un Script LUA pour radio-commande sous OpenTx 2.2, 2.3.
 
-A titre personnel, ce script est installé et fonctionne sur Taranis X9D+. Il est toutefois normalement compatible de toute radio sous OpenTx avec écran minimum de 128x64 : X9D, X9D+, QX7, Tango2, Xlite, ...
+A titre personnel, ce script est installé et fonctionne sur Taranis X9D+. Il est toutefois compatible de radios sous OpenTx avec écran minimum de 128x64 telles que X9D, X9D+, QX7, Tango2, ...
+
+Le script LUA est toutefois incompatible des radios fonctionnant avec des Widgets (Jumper Txx, Horus, ...).
 
 ![](/img/mainScreenTango2.jpg)
 
@@ -53,9 +54,9 @@ L’application propose également un écran secondaire ne comprenant **que les 
 
 **Le passage d’un écran à l’autre se fait par appui prolongé sur la touche Menu** de la radio commande
 
-## Récupération de la dernière position du Racer (nouveauté v3.0)
-
 <a name="V3.0"></a>
+
+## Récupération de la dernière position du Racer (nouveauté v3.0)
 
 Votre Racer a crashé et dans votre empressement à le récupérer vous avez malheureusement éteint la radio commande !!!
 Pas de panique, la dernière position du Racer peut être visualisée en rallumant la radio commande et en se rendant dans l'écran secondaire de Track_n_Locate.
