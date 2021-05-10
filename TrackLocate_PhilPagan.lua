@@ -121,10 +121,10 @@ function displayCoordOnly212x64() -- affichage des coord GPS seulement (pour cap
     local str2
     local str3
     if CoordOk  then
-        str3 = "Localisation actuelle"
+        str3 = "Point GPS actuel"
         str2 = LaBd .. "," .. LoBd
     else
-        str3 = "Localisation enregistree"
+        str3 = "Point GPS enregistre"
         str2 = str1
     end
     lcd.drawText(20,1,str3,0)
@@ -136,10 +136,10 @@ function displayCoordOnly128x64() -- affichage des coord GPS seulement (pour cap
     local str2
     local str3
     if CoordOk  then
-        str3 = "Localisation actuelle"
+        str3 = "Point GPS actuel"
         str2 = LaBd .. "," .. LoBd
     else
-        str3 = "Localisation enregistree"
+        str3 = "Point GPS enregistre"
         str2 = str1
     end
     lcd.drawText(2,1,str3,0)

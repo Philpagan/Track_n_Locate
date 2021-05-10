@@ -103,7 +103,7 @@ Ce n'est pas aussi facile qu'un QRcode (code trop lourd à intégrer pour nos ra
    N'hésitez pas à relancer une découverte des capteurs si besoin
    ![](/img/sensors.jpg)
 
-5. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trlloc` (ou autre nom donné au script LUA)
+5. Dans la page de télémétrie de votre modèle, réservez un écran à Track_n_Locate en sélectionnant `Script` + `trkloc` (ou autre nom donné au script LUA)
 
    ![](/img/script_in_telemetry.jpg)
 
