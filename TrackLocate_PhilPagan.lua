@@ -212,7 +212,7 @@ local function background() -- is  called  periodically  (always,  the  screen  
             --[	B : GPS accuracy based on HDOP (0 = lowest to 9 = highest accuracy)
             --[	C : number of satellites locked (digit C & D are the number of locked satellites)
             --[ D : number of satellites locked (if 14 satellites are locked, C = 1 & D = 4)		
-            gpsSATS = string.sub (gpsSATS, 3)		
+            nbSats = string.sub (nbSats, 3)		
         end
 
         -- Lecture des données GPS
