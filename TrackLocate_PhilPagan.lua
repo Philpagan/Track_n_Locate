@@ -22,16 +22,31 @@ local TabCapsNWSE={"N","NNW","NW","WNW","W","WSW","SW","SSW","S","SSE","SE","ESE
 local TabCapsDeg={349,326,304,281,259,236,214,191,169,146,124,101,79,56,34,11,0} -- Capd min correspondant
 local FlagDisplayMain = true -- indique si on affiche l'écran principal ou l'écran secondaire des coordonnées GPS brutes
 local gpsId
+local gpsSatId
 local gpsTable
 local RecFile = "./SCRIPTS/TELEMETRY/TrkLoc.txt" -- fichier d'enregistrement des dernières coord GPS valides
 local var1
 
+--************** FONCTIONS DIVERSES **************
+
+--************** Calcul de l'arrondi d'une valeur **************
 function rnd(num,	decimals) -- si besoin, non utilisé ici
 		local	mult	=	10^(decimals	or	0)
 		return	math.floor(num	*	mult	+	0.5)	/	mult
 end
 
-function getGPS() -- récupération des données GPS 
+--************** Récupération de l'id d'un capteur **************
+local function getTelemetryId(name)    
+	field = getFieldInfo(name)
+	if field then
+		return field.id
+	else
+		return-1
+	end
+end
+
+--************** Récupération des données GPS **************
+function getGPS()
     gpsTable = getValue(gpsId)
     if (type(gpsTable) == "table") then
         LaAd = gpsTable["pilot-lat"]
@@ -49,7 +64,8 @@ function getGPS() -- récupération des données GPS
     end
 end
 
-function processGpsHeadingDistance() --traitement des coordonnées, calcul du cap et de la distance
+--************** Traitement des coordonnées, calcul du cap et de la distance **************
+function processGpsHeadingDistance()
     if CoordOk then
         LaAr = math.rad(LaAd)
         LoAr = math.rad(LoAd)
@@ -83,6 +99,8 @@ function processGpsHeadingDistance() --traitement des coordonnées, calcul du ca
         -- on en fait surtout rien : mémorisation des données en cas de perte de retour télémétrie    
     end
 end
+
+--************** AFFICHAGES **************
 
 function displayMain212x64() -- affichage pour X9D X9D+
     -- moitié gauche de l'écran
@@ -146,6 +164,8 @@ function displayCoordOnly128x64() -- affichage des coord GPS seulement (pour cap
     lcd.drawText(2,26,str2,MIDSIZE)
 end
 
+--************** ENREGISTREMENT - LECTURE **************
+
 function recCoord2SD() -- enregistrement des coord GPS sur SD
     local file = io.open(RecFile,"w") --efface les données existantes
     local str1
@@ -161,11 +181,17 @@ function readCoordSD() -- lecture des coord GPS sur SD
     return str1
 end
 
+--************** INIT - BACKGROUND - RUN **************
+
 local function init() -- is  called  once  when  model  is  loaded
     
 	-- Récupération de l'identifiant du capteur GPS
-	local fieldinfo = getFieldInfo("GPS")
-	gpsId = fieldinfo['id']
+    gpsId = getTelemetryId("GPS")
+
+	-- id capteur "nombre de satellites"
+	gpsSatId = getTelemetryId("Sats")
+	--if Sats can't be read, try to read Tmp2 (number of satellites SBUS/FRSKY)
+	if (gpsSatId == -1) then gpsSatId = getTelemetryId("Tmp2") end
     
 end
 
@@ -177,8 +203,19 @@ local function background() -- is  called  periodically  (always,  the  screen  
     if time > lastTime + 50 then
         lastTime = time
         
+        -- nombre de satellites
+        nbSats = getValue(gpsSatId)
+        if string.len(nbSats) > 2 then		
+            -- SBUS Example 1013: -> 1= GPS fix 0=lowest accuracy 13=13 active satellites
+            --[	Sats / Tmp2 : GPS lock status, accuracy, home reset trigger, and number of satellites. Number is sent as ABCD detailed below. Typical minimum 
+            --[	A : 1 = GPS fix, 2 = GPS home fix, 4 = home reset (numbers are additive)
+            --[	B : GPS accuracy based on HDOP (0 = lowest to 9 = highest accuracy)
+            --[	C : number of satellites locked (digit C & D are the number of locked satellites)
+            --[ D : number of satellites locked (if 14 satellites are locked, C = 1 & D = 4)		
+            gpsSATS = string.sub (gpsSATS, 3)		
+        end
+
         -- Lecture des données GPS
-        nbSats = getValue("Sats")
         getGPS()
 
         -- sauvegardes sur SD
